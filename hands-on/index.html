@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelas Praktisi Web</title>
+  </head>
+  <body>
+    <h1 id="pesan">Pesan akan muncul disini</h1>
+    <!-- DOM -->
+  </body>
+  <script>
+    // ini bagian untuk kode JavaScript
+    const element = document.getElementById('pesan');
+    element.innerText = 'Kelas Praktisi Web';
+
+    // Integrasikan ke BACKEND
+    fetch('http://localhost:3000/message').then((res) =>
+      res.json().then((data) => {
+        document.getElementById('pesan').innerText = data.message;
+      })
+    );
+  </script>
+</html>
